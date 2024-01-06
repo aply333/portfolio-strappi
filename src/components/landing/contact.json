@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_landing_contacts",
+  "info": {
+    "displayName": "Contact",
+    "icon": "envelop",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Excerpt": {
+      "type": "richtext"
+    },
+    "Contact": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::contact.contact"
+    }
+  }
+}

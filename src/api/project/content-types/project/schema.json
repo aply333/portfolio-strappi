@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "About": {
+      "type": "richtext"
+    },
+    "Stacks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::stack-item.stack-item"
+    },
+    "Screenshot": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Work",
+        "Freelance",
+        "Education",
+        "Personal"
+      ]
+    },
+    "Codebase": {
+      "type": "string"
+    },
+    "Live": {
+      "type": "string"
+    }
+  }
+}

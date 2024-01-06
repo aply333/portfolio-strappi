@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_landing_stacks",
+  "info": {
+    "displayName": "Stack",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Stacks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::stack-item.stack-item"
+    }
+  }
+}

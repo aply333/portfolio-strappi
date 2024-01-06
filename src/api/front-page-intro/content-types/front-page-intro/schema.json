@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "front_page_intros",
+  "info": {
+    "singularName": "front-page-intro",
+    "pluralName": "front-page-intros",
+    "displayName": "[ Page ] - Landing",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "landing.intro-landing"
+    },
+    "About": {
+      "displayName": "About",
+      "type": "component",
+      "repeatable": false,
+      "component": "landing.about"
+    },
+    "Stack": {
+      "type": "component",
+      "repeatable": false,
+      "component": "landing.stack"
+    },
+    "Gallery": {
+      "type": "component",
+      "repeatable": false,
+      "component": "landing.gallery"
+    },
+    "Contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "landing.contact"
+    }
+  }
+}

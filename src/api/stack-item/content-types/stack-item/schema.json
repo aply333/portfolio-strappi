@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stack",
+  "info": {
+    "singularName": "stack-item",
+    "pluralName": "stack",
+    "displayName": "Stack",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Tech": {
+      "type": "string"
+    },
+    "Excerpt": {
+      "type": "text"
+    },
+    "Logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

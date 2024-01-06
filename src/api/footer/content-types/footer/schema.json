@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "[ Data ] - Footer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nav_Title": {
+      "type": "string"
+    },
+    "Right_Title": {
+      "type": "string"
+    }
+  }
+}
