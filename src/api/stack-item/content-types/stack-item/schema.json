@@ -19,11 +19,21 @@
       "type": "text"
     },
     "Logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
+      ]
+    },
+    "Level": {
+      "type": "enumeration",
+      "enum": [
+        "top",
+        "mid",
+        "low"
       ],
-      "type": "media",
-      "multiple": false
+      "enumName": "level"
     }
   }
 }

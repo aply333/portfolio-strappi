@@ -932,6 +932,7 @@ export interface ApiStackItemStackItem extends Schema.CollectionType {
     Tech: Attribute.String;
     Excerpt: Attribute.Text;
     Logo: Attribute.Media;
+    Level: Attribute.Enumeration<['top', 'mid', 'low']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
