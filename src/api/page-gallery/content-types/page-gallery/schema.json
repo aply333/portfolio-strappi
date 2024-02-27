@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_galleries",
+  "info": {
+    "singularName": "page-gallery",
+    "pluralName": "page-galleries",
+    "displayName": "[ Page ] - Gallery",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    }
+  }
+}

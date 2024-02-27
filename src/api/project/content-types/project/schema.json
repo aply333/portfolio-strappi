@@ -31,20 +31,16 @@
         "images"
       ]
     },
-    "Type": {
-      "type": "enumeration",
-      "enum": [
-        "Work",
-        "Freelance",
-        "Education",
-        "Personal"
-      ]
-    },
     "Codebase": {
       "type": "string"
     },
     "Live": {
       "type": "string"
+    },
+    "Type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-type.work-type"
     }
   }
 }

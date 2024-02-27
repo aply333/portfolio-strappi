@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "work_types",
+  "info": {
+    "singularName": "work-type",
+    "pluralName": "work-types",
+    "displayName": "Work Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Type": {
+      "type": "string"
+    },
+    "Icon": {
+      "type": "enumeration",
+      "enum": [
+        "briefcase",
+        "school",
+        "seedling"
+      ]
+    },
+    "Type_ID": {
+      "type": "uid",
+      "targetField": "Type"
+    }
+  }
+}
