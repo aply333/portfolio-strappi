@@ -810,6 +810,38 @@ export interface ApiContactContact extends Schema.SingleType {
   };
 }
 
+export interface ApiContactFormContactForm extends Schema.CollectionType {
+  collectionName: 'contact_forms';
+  info: {
+    singularName: 'contact-form';
+    pluralName: 'contact-forms';
+    displayName: 'Contact Form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Sender: Attribute.String;
+    Email: Attribute.Email;
+    Content: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-form.contact-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-form.contact-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFooterFooter extends Schema.SingleType {
   collectionName: 'footers';
   info: {
@@ -876,6 +908,38 @@ export interface ApiFrontPageIntroFrontPageIntro extends Schema.SingleType {
   };
 }
 
+export interface ApiPageGalleryPageGallery extends Schema.SingleType {
+  collectionName: 'page_galleries';
+  info: {
+    singularName: 'page-gallery';
+    pluralName: 'page-galleries';
+    displayName: '[ Page ] - Gallery';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-gallery.page-gallery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-gallery.page-gallery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProjectProject extends Schema.CollectionType {
   collectionName: 'projects';
   info: {
@@ -896,9 +960,13 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'api::stack-item.stack-item'
     >;
     Screenshot: Attribute.Media & Attribute.Required;
-    Type: Attribute.Enumeration<['Work', 'Freelance', 'Education', 'Personal']>;
     Codebase: Attribute.String;
     Live: Attribute.String;
+    Type: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'api::work-type.work-type'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -951,6 +1019,39 @@ export interface ApiStackItemStackItem extends Schema.CollectionType {
   };
 }
 
+export interface ApiWorkTypeWorkType extends Schema.CollectionType {
+  collectionName: 'work_types';
+  info: {
+    singularName: 'work-type';
+    pluralName: 'work-types';
+    displayName: 'Work Type';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Type: Attribute.String;
+    Icon: Attribute.Enumeration<['briefcase', 'school', 'seedling']>;
+    Type_ID: Attribute.UID<'api::work-type.work-type', 'Type'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::work-type.work-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::work-type.work-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -970,10 +1071,13 @@ declare module '@strapi/types' {
       'plugin::menus.menu': PluginMenusMenu;
       'plugin::menus.menu-item': PluginMenusMenuItem;
       'api::contact.contact': ApiContactContact;
+      'api::contact-form.contact-form': ApiContactFormContactForm;
       'api::footer.footer': ApiFooterFooter;
       'api::front-page-intro.front-page-intro': ApiFrontPageIntroFrontPageIntro;
+      'api::page-gallery.page-gallery': ApiPageGalleryPageGallery;
       'api::project.project': ApiProjectProject;
       'api::stack-item.stack-item': ApiStackItemStackItem;
+      'api::work-type.work-type': ApiWorkTypeWorkType;
     }
   }
 }
