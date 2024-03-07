@@ -34,6 +34,14 @@
         "low"
       ],
       "enumName": "level"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Tech",
+        "Framework",
+        "Tool"
+      ]
     }
   }
 }
