@@ -4,11 +4,11 @@ export interface LandingAbout extends Schema.Component {
   collectionName: 'components_landing_abouts';
   info: {
     displayName: 'About';
+    description: '';
   };
   attributes: {
     Title: Attribute.String;
     Content: Attribute.RichText;
-    Image: Attribute.Media;
   };
 }
 

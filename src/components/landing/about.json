@@ -1,7 +1,8 @@
 {
   "collectionName": "components_landing_abouts",
   "info": {
-    "displayName": "About"
+    "displayName": "About",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,13 +11,6 @@
     },
     "Content": {
       "type": "richtext"
-    },
-    "Image": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
     }
   }
 }
